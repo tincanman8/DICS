@@ -1,0 +1,5 @@
+classes= 4  
+train  = DICS-model/train.txt  
+valid  = DICS-model/test.txt  
+names = DICS-model/objects.names  
+backup = DICS-model/weights
