@@ -34,7 +34,7 @@ LABELS = open(labelsPath).read().strip().split("\n")
 COLORS = np.array([[0, 0, 0],[0, 0, 255],[0, 255, 0],[0, 255, 255]])
 
 # derive the paths to the YOLO weights and model configuration
-weightsPath = os.path.sep.join([args["yolo"], "DICS.backup"])
+weightsPath = os.path.sep.join([args["yolo"], "DICS.weights"])
 configPath = os.path.sep.join([args["yolo"], "DICS.cfg"])
 
 # load our YOLO object detector trained on COCO dataset (80 classes)
