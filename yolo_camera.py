@@ -12,8 +12,8 @@ ap.add_argument('-cl', '--classes',
                 help = 'path to objects.names',default="/path/to/objects.names")
 args = ap.parse_args()
 
-os.system('sudo sh -c "echo 393 > /sys/class/gpio/export"')
-os.system('sudo sh -c "echo out > /sys/class/gpio/gpio393/direction"')
+#os.system('sudo sh -c "echo 393 > /sys/class/gpio/export"')
+#os.system('sudo sh -c "echo out > /sys/class/gpio/gpio393/direction"')
 
 # Get names of output layers, output for YOLOv3 is ['yolo_16', 'yolo_23']
 def getOutputsNames(net):
