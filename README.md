@@ -48,7 +48,7 @@ Now finally, back in the original terminal run:
 ```
 or
 ```
-./darknet detector demo DICs-model/DICS.data DICS-model/DICS.cfg DICS-model/DICS.weights -c 2
+>>> ./darknet detector demo DICs-model/DICS.data DICS-model/DICS.cfg DICS-model/DICS.weights -c 2
 ```
 Use your phone or a printed out image of a stop sign or traffic light and show it to the camera to see if it picks it up!
 It is likely that the performance of a camera-based trial of the algorithm will not perform well due to the nature of the training data used (field images from a dashcam).
