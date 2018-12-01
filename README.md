@@ -1,4 +1,9 @@
-Install OpenCV (3.4.2 or later), and CUDA support and cudNN. If on the Jetson TX2 (strongly recommended), this is not as simple as using a package installer, you may have to build from source. Install the GPU drivers.
+# DICS: Driver-Intersection Caution System
+###### For the Jetson TX2
+
+[Install JetPack](https://developer.nvidia.com/embedded/jetpack) on the Jetson TX2. [Install OpenCV](https://www.hackster.io/wilson-wang/jetson-tx2-tensorflow-opencv-keras-install-b74e40) (3.4.2 or later). Note, due to the ARM architecture of the Cortex CPUs on-board the Jetson TX2, you will not be able to use pip to install OpenCV. You must follow the instructions in the link above.
+
+If any other dependencies are needed, install them as they are requested.
 
 Once you have done that, clone this repository and download the model weights and test videos:
 ```
