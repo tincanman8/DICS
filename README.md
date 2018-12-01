@@ -41,8 +41,8 @@ To test operation of the object detector on the Jetson TX2 camera, open a new te
 ```
 >>> gst-launch-1.0 nvcamerasrc ! 'video/x-raw(memory:NVMM), width=(int)1920, height=(int)1080, format=(string)I420, framerate=(fraction)30/1' ! nvtee ! nvvidconv ! 'video/x-raw, format=(string)I420, framerate=(fraction)30/1' ! tee ! v4l2sink device=/dev/video2
 ```
-This forwards the frame stream from the camera (YUV format) from /dev/video0 to /dev/video2 (RBG format) at 30 fps.
-Now finally run:
+This forwards the frame stream from the camera (YUV format) from /dev/video0 to /dev/video2 (RBG format) at 30 fps. It is a process that keeps running until you Ctrl+C out of it.
+Now finally, back in the original terminal run:
 ```
 >>> python3 yolo_camera.py
 ```
