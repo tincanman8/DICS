@@ -5,15 +5,15 @@ import os
 
 ap = argparse.ArgumentParser()
 ap.add_argument('-c', '--config', 
-                help = 'path to config file', default="/path/to/yolov3-tiny.cfg")
+                help = 'path to config file', default="DICS-model/DICS.cfg")
 ap.add_argument('-w', '--weights', 
-                help = 'path to pre-trained weights', default="/path/to/yolov3-tiny_final.weights")
+                help = 'path to pre-trained weights', default="DICS-model/DICS.weights")
 ap.add_argument('-cl', '--classes', 
-                help = 'path to objects.names',default="/path/to/objects.names")
+                help = 'path to objects.names',default="DICS-model/DICS.names")
 args = ap.parse_args()
 
-os.system('sudo sh -c "echo 393 > /sys/class/gpio/export"')
-os.system('sudo sh -c "echo out > /sys/class/gpio/gpio393/direction"')
+#os.system('sudo sh -c "echo 393 > /sys/class/gpio/export"')
+#os.system('sudo sh -c "echo out > /sys/class/gpio/gpio393/direction"')
 
 # Get names of output layers, output for YOLOv3 is ['yolo_16', 'yolo_23']
 def getOutputsNames(net):
@@ -32,7 +32,7 @@ def draw_pred(img, class_id, confidence, x, y, x_plus_w, y_plus_h):
 
     cv2.putText(img, label, (int(x-10),int(y-10)), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
-    os.system("sudo sh -c 'echo 1 > /sys/class/gpio/gpio393/value'")
+    #os.system("sudo sh -c 'echo 1 > /sys/class/gpio/gpio393/value'")
     
 # Define a window to show the cam stream on it
 window_title= "Intersection Detector"   
@@ -46,7 +46,8 @@ with open(args.classes, 'r') as f:
 print(classes)
 
 #Generate color for each class randomly
-COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
+#COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
+COLORS = np.array([[0, 0, 0],[0, 0, 255],[0, 255, 0],[0, 255, 255]])
 
 # Define network from configuration file and load the weights from the given weights file
 net = cv2.dnn.readNet(args.weights,args.config)
