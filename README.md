@@ -1,5 +1,6 @@
 Install OpenCV (3.4.2 or later), and CUDA support and cudNN. If on the Jetson TX2 (strongly recommended), this is not as simple as using a package installer, you may have to build from source. Install the GPU drivers.
 
+Once you have done that, clone this repository and download the model weights and test videos:
 ```
 >>> git clone https://github.com/tincanman8/DICS.git
 >>> cd DICS
@@ -20,7 +21,7 @@ This will cause the fan to turn on as well, to cool the Jetson.
 
 To test real-time detection on a video (as in, process frame by frame and output to screen immediately), run the following command:
 ```
->>> ./darknet detector demo DICs-model/DICS.data DICS-model/DICS.cfg DICS-model/DICS.weights input/test1.mp4
+>>> ./darknet detector demo DICS-model/DICS.data DICS-model/DICS.cfg DICS-model/DICS.weights input/test1.mp4 -thresh 0.85
 ```
 Replace 'test1.mp4' in the command above with the path to a video of your choice, or leave as is to test functionality on a provided test video from YouTube.
 
